@@ -18,7 +18,10 @@ test('ignores flags after --', t => {
 });
 
 test('throws on non-string flag', t => {
-	t.throws(() => hasFlag(), {instanceOf: TypeError});
+	t.throws(() => {
+		hasFlag();
+	}, {
+		instanceOf: TypeError
+	});
 });
-	
 
