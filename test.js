@@ -14,7 +14,6 @@ test('main', t => {
 	t.true(hasFlag('u', ['-u', '--', '-f']));
 	t.false(hasFlag('f', ['-u', '--', '-f']));
 });
-
 test('handles empty argv', t => {
 	t.false(hasFlag('foo', []));
 });
@@ -28,6 +27,8 @@ test('ignores flags after --', t => {
 });
 
 test('throws on non-string flag', t => {
-	t.throws(() => hasFlag(), {instanceOf: TypeError});
+	t.throws(() => {
+		hasFlag();
+	}, {instanceOf: TypeError});
 });
 
